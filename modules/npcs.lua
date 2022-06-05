@@ -12,7 +12,7 @@ function define_npc()
     tooltip = "UwU",
     shop = true,
     walking = false,
-    stock = {"flower20", "flower21"}, -- max 10
+    stock = {"seed20", "seed21"}, -- max 10
     specials = {"flower20", "flower21", "log"}, -- must be 3
     dialogue = {
       "I just love plants, they're so amazing!",

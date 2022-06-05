@@ -1,3 +1,29 @@
-Add Glass Workbench
-Get Glass to be craftable
-Impliment Glass Items
+Flowers/Plants to Impliment
+
+Vines
+Asterisk Ivy
+Passionflower
+
+Flowers
+Thistle
+Bleeding Heart
+Daisy
+Red Clover - 
+Rose - 
+
+Aquatic Plants
+Cattail
+Lotus
+
+Misc. Foliage
+Ferns
+Grasses
+Reindeer Moss
+
+
+"Trees"
+Bamboo
+Conifers
+Sakura
+Crape Myrtle
+Palm

@@ -43,6 +43,15 @@ function ready()
     api_create_obj("npc480", player["x"] + 16, player["y"] - 32)
   end
 
+  -- This will check if the composter mod by Parchment is installed, and if so will make Flora plants compostable
+  if api_mod_exists("composter_mod") ~= nil then
+    api_mod_call("composter_mod", "add_growable_plant", {"flora_seedling20", "flora_flower20"})
+    api_mod_call("composter_mod", "add_growable_plant", {"flora_seedling21", "flora_flower21"})
+  end
+
+  local res api_define_flower_recipe("flower12", "flower13", "flower21")
+  api_log("Red Clover recipe define", res)
+
   -- play a sound to celebrate our mod loading! :D
   api_play_sound("confetti")
 
