@@ -1,4 +1,6 @@
-Flowers/Plants to Impliment
+Random Ideas
+Right Click plants for vegatative propagation
+Give plants and seedlings random chance to die for no apparent reason
 
 Vines
 Asterisk Ivy
@@ -27,3 +29,25 @@ Conifers
 Sakura
 Crape Myrtle
 Palm
+
+Mushrooms
+Indigo Milk Cap
+Chanterelle
+Toadstool
+Honey Agaric
+Fly Agaric
+Death Cap
+Morel
+Mycena
+
+Bees
+Lavender Bee
+Rose Bee
+Lotus Bee
+Fly Agaric Bee
+Combristle Bee
+Pondshine Bee
+Honeydrop Bee
+Bamboo Bee
+
+
