@@ -26,7 +26,8 @@ function define_objects()
     tooltip = "A pure drop of oil from a lavender flower, highly sought after by essential oil companies.",
     shop_key = false,
     shop_buy = 5,
-    shop_sell = 5
+    shop_sell = 5,
+    bee_lore = "A pure drop of oil from a lavender flower, highly sought after by essential oil companies."
   }, "sprites/items/lavender_oil.png")
 
   api_log("Lavender Oil defined", res)
@@ -38,24 +39,48 @@ function define_objects()
     tooltip = "A petal from the Port Apico Ground Orchid, highly prized for its use in cosmetics and perfume.",
     shop_key = false,
     shop_buy = 15,
-    shop_sell = 15
+    shop_sell = 15,
+    bee_lore = "A petal from the Port Apico Ground Orchid, highly prized for its use in cosmetics and perfume."
   }, "sprites/items/orchid_petal.png")
 
   api_log("Orchid Petal defined", res)
 
 -- Walls
-  --[[local res api_define_wall({
+  local res api_define_wall({
     id = 20,
     name = "Bamboo Wall"
     }, "sprites/placeables/bamboo_wall.png")
     
   local bw_recipe = {
-      {item = "log", amount = 5}
+      {item = "flora_bamboo_stick", amount = 5}
   }
     
-    res = api_define_recipe("decoration", MOD_NAME, "wall20", bw_recipe, 4)
+    api_define_recipe("t1", "wall20", bw_recipe, 4)
     
-    api_log("Bamboo Wall Defined", res)--]]
+    api_log("Bamboo Wall Defined", res)
+
+    --[[local res api_define_wall({
+      id = 21,
+      name = "Floral Wall"
+      }, "sprites/placeables/floral_wall.png")
+      
+      api_log("Bamboo Wall Defined", res)--]]
+
+-- Decor 
+local res api_define_object({
+  id = "gnome",
+  name = "Garden Gnome",
+  category = "Decoration",
+  tooltip = "A garden gnome to protect your plants.",
+  shop_key = false,
+  pickable = true,
+  place_grass = true,
+  shop_buy = 15,
+  shop_sell = 15
+}, "/sprites/decor/gnome.png")
+
+
+api_log("Garden Gnome defined", res)
     
       
 

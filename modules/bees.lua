@@ -49,7 +49,7 @@ function define_bee()
     rainlover = false,
     snowlover = false,
     grumpy = false,
-    produce = "lavender_oil",
+    produce = "flora_lavender_oil",
     chance = 100,
     requirement = "",
     bid = "LV"
@@ -80,7 +80,7 @@ function define_bee()
     snowlover = false,
     grumpy = true,
     calming = {"flower24"},
-    produce = "orchid_petal",
+    produce = "flora_orchid_petal",
     chance = 100,
     requirement = "",
     bid = "OR"

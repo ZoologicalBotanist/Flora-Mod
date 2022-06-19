@@ -3,15 +3,17 @@ MOD_NAME = "flora"
 
 -- Thanks to Mushy for tossing this my way
 ROTATING_STOCK = {2, 
-{"seed20", "seed22"},
-{"flora_bamboo_sapling", "flora_crape_myrtle_sapling"}
+{"seed30", "seed31", "seed32", "seed33", "seed34", "seed35", "seed36", "seed37", "seed38", "seed39"},
+{"seed40", "seed41"},
+{"flora_bamboo_sapling", "flora_crape_myrtle_sapling"},
+{"flora_gnome"}
 }
 
 function register()
 
   return {
     name = MOD_NAME,
-    hooks = {"ready", "click", "key"},
+    hooks = {"ready", "click", "key", "create"},
     modules = {"plants", "npcs", "bees", "objects"}
   }
 end
@@ -21,57 +23,35 @@ function init()
   api_set_devmode(true)
   log("init", "Hello World!")
 
+  local res = api_define_workbench("Flora Mod", {
+    t1 = "Decor",
+    t2 = "Materials",
+    t3 = "Hello",
+    t4 = "Hello",
+    t5 = "Hello"
+  })
+
+  api_log("Workbench Tabs defined", res)
+
   local res = define_plant()
+  api_log("Plants defined", res)
 
   local res = define_objects()
+  api_log("Objects defined", res)
 
   local res = define_bee()
+  api_log("Bees defined", res)
 
   local res = define_npc()
+  api_log("NPC defined", res)
+
+  local cb_recipe = {
+    {item = "log", amount = 5}
+}
 
   return "Success"
 
 end
-
--- Quests
-quests = {}
-
-api_define_gif("quest1-1", "sprites/quests/quest1-1.gif",1)
-
-quests[1] = {
-  def = {
-    id = "flora_quest1_cuttings",
-    title = "Plant Cuttings",
-    reqs = nil,
-    icon = "flower23",
-    reward = "flower24@1",
-    unlock = {"flora_quest2_apiflora"},
-    unlocked = true
-  },
-  page1 = {
-    {text = "Some plants can be propagated with cuttings!"},
-    {gif = "quest1-1", height = 46},
-    {text = "To do so, just right click on the plant. Remember that not all plants can do this!"},
-  },
-  page2 = {
-    {text = "Give it a try with this orchid!"}
-  }
-}
-
-quests[2] = {
-  def = {
-    id = "flora_quest2_apiflora",
-    title = "Apiflora Bees",
-    reqs = {"bee.combflower@1"},
-    icon = "lavender",
-    reward = "bee.lavender@1",
-    unlock = nil
-  },
-  page1 = {
-    {text = "Sometimes, when picking flowers, they might have an apiflora bee nesting inside of them!"},
-    {text = "The combflower is one of these flowers, go pick a few!"},
-  }
-}
 
 function ready()
 
@@ -82,16 +62,39 @@ function ready()
     api_create_obj("npc480", player["x"] + 16, player["y"] - 32)
   end
 
+  if #friend > 1 then
+    for i=2, #friend do
+      api_destroy_inst(friend[i]["id"])
+    end
+  end
+
+  --[[friend2 = api_get_menu_objects(nil, "npc481")
+  if #friend == 0 then
+    api_create_obj("npc481", 3241, 3653)
+  end
+
+  if #friend2 > 1 then
+    for i=2, #friend2 do
+      api_destroy_inst(friend2[i]["id"])
+    end
+  end--]]
+
+
+
+  --api_unlock_quest("flora_quest_01")
+
 
   -- The next sections of code focus on adding cross compatability with other mods.
   -- This will check if the composter mod by Parchment is installed, and if so will make Flora plants compostable
-  if api_mod_exists("composter_mod") ~= nil then
-    api_mod_call("composter_mod", "add_growable_plant", {"seedling20", "flower20"})
-    api_mod_call("composter_mod", "add_growable_plant", {"seedling21", "flower21"})
-    api_mod_call("composter_mod", "add_growable_plant", {"seedling22", "flower22"})
-    api_mod_call("composter_mod", "add_growable_plant", {"seedling23", "flower23"})
+  --[[if api_mod_exists("composter_mod") ~= nil then
+    api_mod_call("composter_mod", "add_growable_plant", {"seedling30", "flower30"})
+    api_mod_call("composter_mod", "add_growable_plant", {"seedling31", "flower31"})
+    api_mod_call("composter_mod", "add_growable_plant", {"seedling32", "flower32"})
+    api_mod_call("composter_mod", "add_growable_plant", {"seedling33", "flower33"})
+    api_mod_call("composter_mod", "add_growable_plant", {"seedling34", "flower34"})
+    api_mod_call("composter_mod", "add_growable_plant", {"seedling35", "flower35"})
+    api_mod_call("composter_mod", "add_growable_plant", {"flora_bamboo_sapling", "flora_fake_bamboo"})
     api_mod_call("composter_mod", "add_growable_plant", {"flora_crape_myrtle_sapling", "flora_crape_myrtle_tree"})
-    
     api_log("Composter Mod compatability added", "Success")
   else
     return "Composter Mod not installed!"
@@ -106,29 +109,15 @@ function ready()
     api_mod_call("uranium_bee", "add_item_elements", {"flower22", 1, {"nature"}})
     api_mod_call("uranium_bee", "add_item_elements", {"flower23", 1, {"nature"}})
     api_mod_call("uranium_bee", "add_item_elements", {"flower24", 2, {"nature", "rareium"}})
-    api_mod_call("uranium_bee", "add_item_elements", {"bamboo_stick", 1, {"nature"}})
-    api_mod_call("uranium_bee", "add_item_elements", {"lavender_oil", 2, {"nature", "air"}})
-    api_mod_call("uranium_bee", "add_item_elements", {"orchid_petal", 2, {"nature", "rareium"}})
-
-    -- This will give bees elements and wiki pages
-    api_mod_call("uranium_bee", "add_bee_elements", {"combristle", 2, {"nature", "death"}}) 
-    api_mod_call("uranium_bee", "add_wiki_page", {"combristle", "/sprites/compatability/uranium_wp/wp_combristle.png"})   
-
-    api_mod_call("uranium_bee", "add_bee_elements", {"lavender", 1, {"nature"}}) 
-    api_mod_call("uranium_bee", "add_wiki_page", {"lavender", "/sprites/compatability/uranium_wp/wp_lavender.png"})   
-
-    api_mod_call("uranium_bee", "add_bee_elements", {"orchid", 2, {"nature", "rareium"}}) 
-    api_mod_call("uranium_bee", "add_wiki_page", {"orchid", "/sprites/compatability/uranium_wp/wp_orchid.png"})  
+    api_mod_call("uranium_bee", "add_item_elements", {"flower25", 2, {"nature", "light"}})
+    
 
     api_log("Uranium Bee compatability added", "Success")
 
   else
     return "Uranium Bee Mod not installed!"
-  end
+  end--]]
 
-  api_unlock_quest("flora_quest1_cuttings")
-
-  api_get_data()
   -- play a sound to celebrate our mod loading! :D
   api_play_sound("confetti")
 
@@ -186,6 +175,9 @@ function click(button, click_type)
           api_create_item("flora_bamboo_sapling", sapling_num, mouse_pos["x"], mouse_pos["y"], nil)
         end
       end
+      if inst["oid"] == "flora_gnome" then
+        api_create_item("flora_gnome", 1, mouse_pos["x"], mouse_pos["y"], nil)
+      end
       if inst["oid"] == "flower12" then
         bee_chance = api_random_range(1, 5)
         if bee_chance == 1 then
@@ -193,7 +185,7 @@ function click(button, click_type)
           api_create_item("bee", 1, mouse_pos["x"], mouse_pos["y"], stats)
         end
       end
-      if inst["oid"] == "flower23" then
+      if inst["oid"] == "flower32" then
         bee_chance = api_random_range(1, 10)
         if bee_chance == 1 then
           stats = api_create_bee_stats("lavender", false)
@@ -268,17 +260,12 @@ function change_stock(npc_id, stock_table)
   end
 end
 
---[[direction = {south=0,east=1,north=2,west=3}
-current_direction = direction.south
-function animate_kiosk(obj_id)
-  local ox = api_gp(obj_id, "x")
-  local oy = api_gp(obj_id, "y")
-  local hl = api_get_highlighted("obj")
-  if hl ~= nil and hl == obj_id then
-    api_draw_sprite(spr_kiosk, 1+(current_direction*2), ox, oy - 2)
-  else
-    api_draw_sprite(spr_kiosk, 0+(current_direction*2), ox, oy - 2)
-  end
-end--]]
+function create(id, x, y, oid, inst_type) 
 
--- Crafting Table
+  if oid == "flora_fake_bamboo" then
+    api_create_obj("flora_bamboo_plant", x, y-32)
+    api_destroy_inst(id)
+  end
+
+end
+

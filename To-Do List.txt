@@ -1,53 +1,122 @@
-Random Ideas
-Right Click plants for vegatative propagation
-Give plants and seedlings random chance to die for no apparent reason
+Plants
+Tulip - Buyable (Common) 2
+Daisy - Buyable (Common)
+Carnation - Buyable (Common) 3
+Pansy - Buyable (Common) 2
+Daffodil - Buyable (Common) 2
+Marigold - Buyable (Common) 1
+Petunia - Buyable (Common) 1
+Violet - Buyable (Common) 1
+Daylily - Buyable (Common) 2
+Hosta - Buyable (Common) 3
+Red Clover - Buyable (Uncommon) 2
+Lavender - Buyable (Uncommon) 2
+Anemone - Buyable (Uncommon)
+Dwarf Celosia - Buyable (Uncommon) 3
+Hyacinth - Buyable (Uncommon) 3
 
-Vines
-Asterisk Ivy
-Passionflower
+Disa - Buyable (Rare) 3
+Butterfly Iris - Buyable (Rare) 3
 
-Flowers
-Thistle
-Bleeding Heart
-Daisy
-Red Clover - 
-Rose - 
-
-Aquatic Plants
-Cattail
-Lotus
-
-Misc. Foliage
-Ferns
-Grasses
-Reindeer Moss
+Ivy - Buyable (Special) 1
 
 
-"Trees"
-Bamboo
-Conifers
-Sakura
-Crape Myrtle
-Palm
+Coneflower - Hybrid (Beekeeper's Delight + Daisy) 3
+Chrysanthemum - Hybrid (Swarmwort + Marigold) 3
+Dianthus - Hybrid (Honeybriar + Pansy) 2
+Crocus - Hybrid (Violet + Frosteria) 3
+Ice Plant - Hybrid (Daisy + Frosteria) 3
+Dutch Iris - Hybrid (Violet + Daylily) 1
+Flag Iris - Hybrid (Dutch Iris + Bees Knees) 3
+Lily of the Valley (Daylily + Honeydrop) 3
+Gladiolas - Hybrid (Dutch Iris + Tulip) 3
+Phlox - Hybrid (Petunia + Dianthus) 3
+Morning Glory - Hybrid (Petunia + Ivy) 3
+Sweet Pea - Hybrid (Red Clover + Ivy) 3
+Cosmos - Hybrid (Daisy + Anemone) 3
+Lupine - Hybrid (Lavender + Foxglove) 3
+Poppy - Hybrid (Anemone + Marigold) 3
+Buttercup - Hybrid (Anemone + Daffodil) 3
+Heather - Hybrid (Lavender + 
 
-Mushrooms
-Indigo Milk Cap
-Chanterelle
-Toadstool
-Honey Agaric
-Fly Agaric
-Death Cap
-Morel
-Mycena
+
+
+
+
+Port Apico Ground Orchid - Secret Flower
+
+BGP's that can handle hybrids
+Honeyrose - 1
+Honeybriar - 1
+Goldenrod - 1
+Bees Knees - 1
+Hivesbane - 2
+Pondshine - 2
+Honeydrop - 2
+Frosteria - 1
+Hivanium - 3
+Combristle - 3
+Beewell - 3
 
 Bees
 Lavender Bee
-Rose Bee
-Lotus Bee
-Fly Agaric Bee
 Combristle Bee
-Pondshine Bee
-Honeydrop Bee
-Bamboo Bee
+Orchid Bee
+
+Items
+Planter Box
+Floral Bench
+Floral Lamp
+Toadstool Stool
+
+Trees
+Bamboo
+Crape Myrtle
+Sakura
+Ginkgo
+Dogwood
+Magnolia
+Redbud
+
+
+Ocean Update
+Queen Victora Water Lily
+Nymphea Thermarum
+Cattails
+Sargassum
+Water Hyacinth
+Pickerelweed
+Duckweed
+Banana Lily
+Floating Pennywort
+Water Hawthorn
+Broadleaf Arrowhead
+Mosaic Flower
+Mangrove Tree
+Lotus Light
+Lotus Flower
+
+Butterfly Update
+Butterfly Bush
+Milkweed
+Lantana
+Black Eyed Susan
+Blazing Star
+Butterfly Weed
+Aster
+
+Witch's Update
+Water Hemlock
+Deadly Nightshade
+Oleander
+Stink Lily
+Belladonna
+Rafflesia
+Rafflesia Bee
+Titan Aurum
+Titan Aurum Bee
+Wolfsbane
+Castor Oil Plant
+
 
 

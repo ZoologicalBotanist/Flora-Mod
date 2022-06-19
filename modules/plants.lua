@@ -6,30 +6,220 @@ end
 -- Defines Plants
 function define_plant()
   -- FLOWERS
-  -- Rose
+  -- Tulip
   local res api_define_flower({
-    id = "20",
-    species = "Rose",
-    title = "Rose",
-    latin = "Rosa spp.",
-    hint = "Roses are a common garden flower, someone's got to have one for sale...",
-    desc = "Roses are a commonly grown genus of garden flower with many species and cultivars. There are even events where people show off their prized plants!",
+    id = "30",
+    species = "Tulip",
+    title = "Tulip",
+    latin = "Tulipa Gesneriana",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "A common species of spring bulb, tulips come in a wide variety of colors.",
     shop_buy = 10,
-    shop_sell = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 6,
+    deep = false
+  },
+    "sprites/plants/tulip_item.png", "sprites/plants/tulip_variants.png",
+    "sprites/plants/tulip_seed_item.png", "sprites/plants/tulip_hd.png",
+    {r=190, g=17, b=17}
+  )
+  
+  api_log("Tulip defined", res)
+  
+  -- Daisy
+  local res api_define_flower({
+    id = "31",
+    species = "Daisy",
+    title = "Daisy",
+    latin = "Bellis Perennis",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "Native to Europe, this flower has become widely naturalized in temperate regions, including the Americas and Australasia.",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 2,
+    
+    deep = false
+  },
+    "sprites/plants/daisy_item.png", "sprites/plants/vine_test.png",
+    "sprites/plants/daisy_seed_item.png", "sprites/plants/daisy_hd.png",
+    {r=213, g=226, b=238}
+  )
+  
+  api_log("Daisy defined", res)
+
+  -- Carnation
+  local res api_define_flower({
+    id = "32",
+    species = "Carnation",
+    title = "Carnation",
+    latin = "Dianthus Caryophyllus",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "Carnations have become widely cultivated by people, and were first mentioned in Ancient Greek literature over 2,000 years ago!",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 4,
+    deep = false
+  },
+    "sprites/plants/carnation_item.png", "sprites/plants/carnation_variants.png",
+    "sprites/plants/carnation_seed_item.png", "sprites/plants/carnation_hd.png",
+    {r=336, g=100, b=100}
+  )
+  
+  api_log("Carnation defined", res)
+
+  -- Pansy
+  local res api_define_flower({
+    id = "33",
+    species = "Pansy",
+    title = "Pansy",
+    latin = "Viola Wittrockiana",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "The Pansy is a hybrid of several members of the violet genus, among them Viola Tricolor. It comes in a variety of colors, making it popular in the garden.",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 5,
+    deep = false
+  },
+    "sprites/plants/pansy_item.png", "sprites/plants/pansy_variants.png",
+    "sprites/plants/pansy_seed_item.png", "sprites/plants/pansy_hd.png",
+    {r=118, g=7, b=167}
+  )
+  
+  api_log("Pansy defined", res)
+
+  -- Daffodil
+  local res api_define_flower({
+    id = "34",
+    species = "Daffodil",
+    title = "Daffodil",
+    latin = "Narcissus Pseudonarcissus",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "Native to Europe, Daffodils are commonly grown in gardens and as a result, wild populations have established themselves in much of the world.",
+    shop_buy = 10,
+    shop_sell = 0,
     aquatic = false,
     variants = 2,
     deep = false
-  }, 
-    "sprites/plants/rose_item.png", "sprites/plants/rose_variants.png", 
-    "sprites/plants/rose_seed_item.png", "sprites/plants/rose_hd.png",
-    {r=190, g=17, b=17}
+  },
+    "sprites/plants/daffodil_item.png", "sprites/plants/daffodil_variants.png",
+    "sprites/plants/daffodil_seed_item.png", "sprites/plants/daffodil_hd.png",
+    {r=228, g=255, b=121}
   )
+  
+  api_log("Daffodil defined", res)
 
-  api_log("Rose define", res)
+  -- Marigold
+  local res api_define_flower({
+    id = "35",
+    species = "Marigold",
+    title = "Marigold",
+    latin = "Tagetes Patula",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "Native to Mexico, Central, and South America, Marigolds are a widely known plant with dozens of different cultivars.",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 3,
+    deep = false
+  },
+    "sprites/plants/marigold_item.png", "sprites/plants/marigold_variants.png",
+    "sprites/plants/marigold_seed_item.png", "sprites/plants/marigold_hd.png",
+    {r=255, g=70, b=0}
+  )
+  
+  api_log("Marigold defined", res)
+  
+  -- Petunia
+  local res api_define_flower({
+    id = "36",
+    species = "Petunia",
+    title = "Petunia",
+    latin = "Petunia Atkinsiana",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "The product of hybridization between other Petunia species, P. Atkinsiana has the largest flowers and widest variety of forms and colors, making them a popular choice with gardeners.",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 4,
+    deep = false
+  },
+    "sprites/plants/petunia_item.png", "sprites/plants/petunia_variants.png",
+    "sprites/plants/petunia_seed_item.png", "sprites/plants/petunia_hd.png",
+    {r=255, g=0, b=200}
+  )
+  
+  api_log("Petunia defined", res)
+
+  -- Wood Violet
+  local res api_define_flower({
+    id = "37",
+    species = "Wood Violet",
+    title = "Wood Violet",
+    latin = "Viola Ordata",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "The scent of this flower was popular in the late victorian period for its scent, which was used in cosmetic fragrences and perfumes",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 2,
+    deep = false
+  },
+    "sprites/plants/violet_item.png", "sprites/plants/violet_variants.png",
+    "sprites/plants/violet_seed_item.png", "sprites/plants/violet_hd.png",
+    {r=255, g=70, b=0}
+  )
+  
+  api_log("Violet defined", res)
+
+  -- Daylily
+  local res api_define_flower({
+    id = "38",
+    species = "Daylily",
+    title = "Daylily",
+    latin = "Hemerocallis Fulva",
+    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+    desc = "Despite the name, Daylilies are not actually true lilies, but get their name from the superficial resemblance.",
+    shop_buy = 10,
+    shop_sell = 0,
+    aquatic = false,
+    variants = 3,
+    deep = false
+  },
+    "sprites/plants/daylily_item.png", "sprites/plants/daylily_variants.png",
+    "sprites/plants/daylily_seed_item.png", "sprites/plants/daylily_hd.png",
+    {r=255, g=70, b=0}
+  )
+  
+  api_log("Daylily defined", res)
+
+-- Hosta
+local res api_define_flower({
+  id = "39",
+  species = "Hosta",
+  title = "Hosta",
+  latin = "Hosta Plantaginea",
+  hint = "A common flower often found in gardens, perhaps someone has it for sale.",
+  desc = "Used worldwide as a shade tolerant flower, Hostas originated in East Asia, particularly Japan and Korea.",
+  shop_buy = 10,
+  shop_sell = 0,
+  aquatic = false,
+  variants = 3,
+  deep = false
+},
+  "sprites/plants/hosta_item.png", "sprites/plants/hosta_variants.png",
+  "sprites/plants/hosta_seed_item.png", "sprites/plants/hosta_hd.png",
+  {r=255, g=70, b=0}
+)
+
+api_log("Daylily defined", res)
 
   -- Red Clover
   api_define_flower({
-    id = "21",
+    id = "40",
     species = "Red Clover",
     title = "Red Clover",
     latin = "Trifolium Pratense",
@@ -45,39 +235,14 @@ function define_plant()
   }, 
     "sprites/plants/redclover_item.png", "sprites/plants/redclover_variants.png", 
     "sprites/plants/redclover_seed_item.png", "sprites/plants/redclover_hd.png",
-    {r=225, g=130, b=220}
+    {r=197, g=115, b=233}
   )
-
-  api_define_flower_recipe("flower12", "flower13", "flower21")
 
   api_log("Red Clover define", res)
 
-  -- Fly Agaric
-  api_define_flower({
-    id = "22",
-    species = "Fly Agaric",
-    title = "Fly Agaric",
-    latin = "Amanita Muscaria",
-    hint = "Perhaps a local gardener will have some spores from one...",
-    desc = "Fly agaric is a species of mushroom native to the Northern Hemisphere, but it has also been unintentionally introduced to the Southern Hemisphere as well. It is one of the most recognizable species of mushroom in pop culture!",
-    shop_sell = 10,
-    shop_buy = 10,
-    aquatic = false,
-    variants = 3,
-    chance = 50,
-    effect_desc = "While some fly agaric may have yellow or white caps, they can all usually be recognized by the white spots on the cap.",
-    deep = false
-  }, 
-    "sprites/plants/flyagaric_item.png", "sprites/plants/flyagaric_variants.png", 
-    "sprites/plants/flyagaric_seed_item.png", "sprites/plants/flyagaric_hd.png",
-    {r=225, g=130, b=220}
-  )
-
-  api_log("Fly Agaric define", res)
-
   -- Lavender
   api_define_flower({
-    id = "23",
+    id = "41",
     species = "Lavender",
     title = "Lavender",
     latin = "Lavandula Angustifolia",
@@ -95,13 +260,11 @@ function define_plant()
     "sprites/plants/lavender_seed_item.png", "sprites/plants/lavender_hd.png",
     {r=209, g=166, b=225}
   )
-  
-  api_define_flower_recipe("flower9", "flower13", "flower23")
 
   api_log("Lavender define", res)
 
   --Orchid
-  api_define_flower({
+  --[[api_define_flower({
     id = "24",
     species = "Port Apico Ground Orchid",
     title = "Port Apico Ground Orchid",
@@ -111,7 +274,7 @@ function define_plant()
     shop_sell = 2,
     shop_buy = 2,
     aquatic = false,
-    variants = 3,
+    variants = 2,
     chance = 10,
     effect_desc = "The Port Apico Ground Orchid is incredibly rare, most likely due to poaching for its petals, which are highly valued in cosmetics. This in turn has led to the decline of its symbiotic species, the Orchid Bee.",
     deep = false
@@ -123,22 +286,36 @@ function define_plant()
   
   api_define_flower_recipe("flower9", "flower13", "flower23")
 
-  api_log("Port Apico Ground Orchid define", res)
+  api_log("Port Apico Ground Orchid define", res)--]]
+
+  --Glowbell
+  api_define_flower({
+    id = "25",
+    species = "Glowbell",
+    title = "Glowbell",
+    latin = "Lumibella Caeruleus",
+    hint = "A common yet magical flower, it is often sold by botanists",
+    desc = "Thanks to its soft blue glow, this flower is easiest found at night.",
+    shop_sell = 2,
+    shop_buy = 2,
+    aquatic = false,
+    variants = 2,
+    chance = 10,
+    effect_desc = "",
+    has_lighting = true,
+    deep = false,
+  }, 
+    "sprites/plants/glowbell_item.png", "sprites/plants/glowbell_variants.png", 
+    "sprites/plants/glowbell_seed_item.png", "sprites/plants/glowbell_hd.png",
+    {r=107, g=170, b=229}
+  )
+
+  api_log("Glowbell define", res)
 
 
 
   -- TREES
   -- Bamboo
-  api_define_object({
-    id = "fake_bamboo",
-    name = "FAKE Bamboo",
-    category = "Decoration",
-    tooltip = "A bamboo plant",
-    tools = {"mouse1", "axeX"},
-    pickable = true,
-    durability = 10.0
-  }, "sprites/plants/bamboo_tree.png")
-
   api_define_object({
     id = "bamboo_plant",
     name = "Bamboo",
@@ -146,7 +323,6 @@ function define_plant()
     tooltip = "A bamboo plant",
     tools = {"mouse1", "axeX"},
     pickable = true,
-    growth = "flora_fake_bamboo 5 10",
     hp = 10.0
   }, "sprites/plants/bamboo_tree.png")
 
@@ -179,33 +355,8 @@ function define_plant()
     tooltip = "A crape myrtle sapling",
     tools = {"mouse1", "axeX"},
     growth = "flora_crape_myrtle_tree 350 400",
-    item_sprite = "sprites/plants/crape_myrtle_seedling_inventory.png",
     shop_buy = 10,
     shop_sell = 10
-  }, "sprites/plants/crape_myrtle_seedling.png") 
-
-end
-    category = "Flora Trees",
-    tooltip = "A crape myrtle sapling",
-    tools = {"mouse1", "axeX"},
-    pickable = true,
-    growth = "flora_crape_myrtle_tree 350 400"
-  }
-
-  api_define_object(crapemyrtle_sapling_def, "sprites/crape_myrtle_sapling.png")
-
-  local crapemyrtle_seed_def = {
-    id = "crape_myrtle_seed",
-    name = "Crape Myrtle Seed",
-    category = "Flora Trees",
-    tooltip = "The seed of a crape myrtle tree",
-    tools = {"mouse1", "axeX"},
-    pickable = true,
-    growth = "flora_crape_myrtle_sapling 1 2"
-  }
-
-  api_define_object(crapemyrtle_seed_def, "sprites/crape_myrtle_seed.png")
-
-  
+  }, "sprites/plants/crape_myrtle_seedling.png") --]]
 
 end
