@@ -532,12 +532,8 @@ function apiflora_change(menu_id)
   -- if we have items in the first four slots let's get to work
   bee_input = api_get_slot(menu_id, 1)
   flower_input = api_get_slot(menu_id, 2)
-  if bee_input == nil then
-    api_log("Bee Input Is Nil", "Yeppers")
-  end
-  api_log("Bee Input", bee_input)
-  api_log("Flower Input", flower_input)
-  if bee_input ~= nil and flower_input ~= nil then 
+
+  if bee_input["item"] ~= "" and flower_input["item"] ~= "" then 
     api_log("Working set to true", "Yay")
     api_sp(menu_id, "working", true)
   else
@@ -563,7 +559,7 @@ function apiflora_tick(menu_id)
       bee_input = api_get_slot(menu_id, 1)
       flower_input = api_get_slot(menu_id, 2)
       -- assuming there is a slot width stuff
-      if bee_input ~= nil and flower_input ~= nil then
+      if bee_input["item"] ~= "" and flower_input["item"] ~= "" then
         bee_type = bee_input["stats"]["species"]
         flower_type = flower_input["item"]
         if bee_type == "uncommon" and flower_type == "flower41" then
@@ -585,7 +581,7 @@ function apiflora_tick(menu_id)
               api_slot_decr(flower_input["id"])
             end
           end
-        elseif bee_type == "bee:common" and flower_type == "flower12" then
+        elseif bee_type == "common" and flower_type == "flower12" then
           bee_chance = api_random_range(1, 100)
           if bee_chance <= 60 then
             bee_item = api_create_bee_stats("combristle", false)
@@ -608,7 +604,7 @@ function apiflora_tick(menu_id)
       end
       bee_input = api_get_slot(menu_id, 1)
       flower_input = api_get_slot(menu_id, 2)
-      if bee_input == nil or flower_input == nil then
+      if bee_input["item"] == "" or flower_input["item"] == "" then
         api_log("Did we make it this far", "Yay!")
         api_sp(menu_id, "working", false) 
       end
