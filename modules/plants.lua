@@ -42,7 +42,7 @@ function define_plant()
     
     deep = false
   },
-    "sprites/plants/daisy_item.png", "sprites/plants/vine_test.png",
+    "sprites/plants/daisy_item.png", "sprites/plants/daisy_variants.png",
     "sprites/plants/daisy_seed_item.png", "sprites/plants/daisy_hd.png",
     {r=213, g=226, b=238}
   )
@@ -70,30 +70,9 @@ function define_plant()
   
   api_log("Carnation defined", res)
 
-  -- Pansy
-  local res api_define_flower({
-    id = "33",
-    species = "Pansy",
-    title = "Pansy",
-    latin = "Viola Wittrockiana",
-    hint = "A common flower often found in gardens, perhaps someone has it for sale.",
-    desc = "The Pansy is a hybrid of several members of the violet genus, among them Viola Tricolor. It comes in a variety of colors, making it popular in the garden.",
-    shop_buy = 10,
-    shop_sell = 0,
-    aquatic = false,
-    variants = 5,
-    deep = false
-  },
-    "sprites/plants/pansy_item.png", "sprites/plants/pansy_variants.png",
-    "sprites/plants/pansy_seed_item.png", "sprites/plants/pansy_hd.png",
-    {r=118, g=7, b=167}
-  )
-  
-  api_log("Pansy defined", res)
-
   -- Daffodil
   local res api_define_flower({
-    id = "34",
+    id = "33",
     species = "Daffodil",
     title = "Daffodil",
     latin = "Narcissus Pseudonarcissus",
@@ -114,7 +93,7 @@ function define_plant()
 
   -- Marigold
   local res api_define_flower({
-    id = "35",
+    id = "34",
     species = "Marigold",
     title = "Marigold",
     latin = "Tagetes Patula",
@@ -134,7 +113,7 @@ function define_plant()
   api_log("Marigold defined", res)
   
   -- Petunia
-  local res api_define_flower({
+  --[[local res api_define_flower({
     id = "36",
     species = "Petunia",
     title = "Petunia",
@@ -152,7 +131,7 @@ function define_plant()
     {r=255, g=0, b=200}
   )
   
-  api_log("Petunia defined", res)
+  api_log("Petunia defined", res)--]]
 
   -- Wood Violet
   local res api_define_flower({
@@ -176,7 +155,7 @@ function define_plant()
   api_log("Violet defined", res)
 
   -- Daylily
-  local res api_define_flower({
+  --[[local res api_define_flower({
     id = "38",
     species = "Daylily",
     title = "Daylily",
@@ -194,7 +173,7 @@ function define_plant()
     {r=255, g=70, b=0}
   )
   
-  api_log("Daylily defined", res)
+  api_log("Daylily defined", res)--]]
 
 -- Hosta
 local res api_define_flower({
@@ -225,8 +204,8 @@ api_log("Daylily defined", res)
     latin = "Trifolium Pratense",
     hint = "Its got the combflowers shape and the beewells color, there has to be a connection there...",
     desc = "Red Clover is a gorgeous species of clover native to Europe and naturalized in North America. The entire plant can be eaten raw, or made into jam or tea.",
-    shop_sell = 2,
-    shop_buy = 2,
+    shop_sell = 10,
+    shop_buy = 0,
     aquatic = false,
     variants = 4,
     chance = 30,
@@ -248,8 +227,8 @@ api_log("Daylily defined", res)
     latin = "Lavandula Angustifolia",
     hint = "Descended from a purpley pink mutation of honeydrop.",
     desc = "Lavender is a strongly aromatic flowering shrub that has long found use by humans for its oil, which can be used in balms, salves, perfumes, cosmetics, and topical applications. It can also be used in cooking.",
-    shop_sell = 2,
-    shop_buy = 2,
+    shop_sell = 10,
+    shop_buy = 0,
     aquatic = false,
     variants = 3,
     chance = 10,
@@ -263,16 +242,16 @@ api_log("Daylily defined", res)
 
   api_log("Lavender define", res)
 
-  --Orchid
-  --[[api_define_flower({
+  -- Port Apico Ground Orchid
+  api_define_flower({
     id = "24",
     species = "Port Apico Ground Orchid",
     title = "Port Apico Ground Orchid",
     latin = "Spathoglottis Apicoensis",
     hint = "This flower is incredibly rare, and may only be obtainable as a reward from the universe.",
     desc = "Belonging to a family of ground orchids, the Port Apico Ground Orchid is only found in Port Apico, and any attempts to cultivate it outside the archipelago have thus far failed.",
-    shop_sell = 2,
-    shop_buy = 2,
+    shop_sell = 10,
+    shop_buy = 0,
     aquatic = false,
     variants = 2,
     chance = 10,
@@ -284,9 +263,9 @@ api_log("Daylily defined", res)
     {r=231, g=183, b=229}
   )
   
-  api_define_flower_recipe("flower9", "flower13", "flower23")
+  api_define_flower_recipe("flower9", "flower13", "flower41")
 
-  api_log("Port Apico Ground Orchid define", res)--]]
+  api_log("Port Apico Ground Orchid define", res)
 
   --Glowbell
   api_define_flower({
@@ -296,8 +275,8 @@ api_log("Daylily defined", res)
     latin = "Lumibella Caeruleus",
     hint = "A common yet magical flower, it is often sold by botanists",
     desc = "Thanks to its soft blue glow, this flower is easiest found at night.",
-    shop_sell = 2,
-    shop_buy = 2,
+    shop_sell = 10,
+    shop_buy = 0,
     aquatic = false,
     variants = 2,
     chance = 10,
@@ -321,9 +300,10 @@ api_log("Daylily defined", res)
     name = "Bamboo",
     category = "Flora Trees",
     tooltip = "A bamboo plant",
-    tools = {"mouse1", "axeX"},
     pickable = true,
-    hp = 10.0
+    hp = true,
+    has_shadow = true,
+    item_sprite = "sprites/plants/bamboo_tree_item.png"
   }, "sprites/plants/bamboo_tree.png")
 
   api_define_object({
@@ -335,7 +315,8 @@ api_log("Daylily defined", res)
     pickable = true,
     growth = "flora_bamboo_plant 350 400",
     shop_buy = 10,
-    shop_sell = 10
+    shop_sell = 10,
+    has_shadow = true
   }, "sprites/plants/bamboo_seedling.png")
 
   -- Crape Myrtle
@@ -344,8 +325,8 @@ api_log("Daylily defined", res)
     name = "Crape Myrtle",
     category = "Flora Trees",
     tooltip = "A species of tree native to Asia that is used in landscaping",
-    tools = {"mouse1", "axeX"},
-    hp = 10.0
+    hp = true,
+    has_shadow = true
   }, "sprites/plants/crape_myrtle_tree.png")
 
   api_define_object({
@@ -356,7 +337,20 @@ api_log("Daylily defined", res)
     tools = {"mouse1", "axeX"},
     growth = "flora_crape_myrtle_tree 350 400",
     shop_buy = 10,
-    shop_sell = 10
-  }, "sprites/plants/crape_myrtle_seedling.png") --]]
+    shop_sell = 10,
+    has_shadow = true
+  }, "sprites/plants/crape_myrtle_seedling.png")
+
+  -- These plants are just used for sprites in planter boxes
+  api_define_object({
+    id = "seedling",
+    name = "Tree Sapling",
+    category = "Flora Trees",
+    tooltip = "A tree sapling",
+    tools = {"mouse1", "axeX"},
+    shop_buy = 10,
+    shop_sell = 10,
+    has_shadow = true
+  }, "sprites/plants/tree_sapling.png")
 
 end

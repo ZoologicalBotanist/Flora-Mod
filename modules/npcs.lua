@@ -11,7 +11,7 @@ function define_npc()
     tooltip = "UwU",
     shop = true,
     walking = true,
-    stock = {"seed20", "seed21", "seed22", "seed23", "seed24", "seed25", "seed26", "seed27", "seed28", "seed29", "seed30"}, -- max 10
+    stock = {"seed30", "seed31", "seed32", "seed33", "seed34", "seed37", "seed39"}, -- max 10
     specials = {"flower1", "flower2", "flower3"}, -- must be 3
     dialogue = {
       "I just love plants, they're so amazing!",
@@ -27,8 +27,8 @@ function define_npc()
     "sprites/npc/npc480_head.png",
     "sprites/npc/npc480_bust.png",
     "sprites/npc/npc480_item.png",
-    "sprites/npc/npc480_dialogue_menu.png",
-    "sprites/npc/npc480_shop_menu.png"
+    "sprites/npc/npc_dialogue_menu.png",
+    "sprites/npc/npc_shop_menu.png"
   )
   api_log("NPC defined", res)
 
